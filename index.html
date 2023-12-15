@@ -89,7 +89,12 @@ async function checkWeather(city){
 }
 
 searchBtn.addEventListener("click", ()=>{
-    checkWeather(searchBox.value);
+   if(searchBox.value === ""){
+        alert(" Enter something Please!!!!");
+    }
+    else{
+  checkWeather(searchBox.value);
+    }
 })
 
 </script>
