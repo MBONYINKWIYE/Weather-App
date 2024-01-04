@@ -55,6 +55,7 @@ async function checkWeather(city){
     if(response.status == 404){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
+         saveData();
     }
     else{
      var data = await response.json();
@@ -82,7 +83,7 @@ async function checkWeather(city){
     else if(data.weather[0].main == "Snow"){
        weatherIcon.src = './images/snow.png';
     }
-
+ saveData();
     document.querySelector(".weather").style.display = "block"; 
     document.querySelector(".error").style.display = "none" 
     }
