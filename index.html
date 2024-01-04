@@ -86,6 +86,7 @@ async function checkWeather(city){
     document.querySelector(".weather").style.display = "block"; 
     document.querySelector(".error").style.display = "none" 
     }
+    saveData();
 }
 
 searchBtn.addEventListener("click", ()=>{
@@ -95,7 +96,16 @@ searchBtn.addEventListener("click", ()=>{
     else{
   checkWeather(searchBox.value);
     }
+    saveData();
 })
+    function saveData(){
+  localStorage.setItem("data", list.innerHTML);
+}
+function showData(){
+  list.innerHTML = localStorage.getItem('data');
+}
+showData();
+
 
 </script>
 </body>
